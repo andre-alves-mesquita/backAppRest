@@ -20,4 +20,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+// get all employees
 Route::get('employees', [EmployeeController::class, 'getEmployee']);
+
+//get Specific employee detail
+Route::get('employees/{id}', [EmployeeController::class, 'getEmployeeById']);
+
+//add Employee
+Route::post('employee', [EmployeeController::class, 'addEmployee']);
+
+//Update employee
+Route::put('updateEmployee/{id}', [EmployeeController::class, 'updateEmployee']);
+
+//Delete employee
+Route::delete('deleteEmployee/{id}', [EmployeeController::class, 'deleteEmployee']);
